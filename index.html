@@ -99,12 +99,13 @@
     .hero-badge::before{content:'✨';font-size:16px}
 
     .hero-title{
-      font-size:clamp(56px,8vw,88px);
-      font-family:'Gravitas One',cursive;line-height:1.1;margin-bottom:18px;letter-spacing:-1px;
+      font-size:clamp(36px,8vw,88px); /* lowered min for small phones */
+      font-family:'Gravitas One',cursive;line-height:1.12;margin-bottom:18px;letter-spacing:-1px;
       background:linear-gradient(135deg,var(--accent-pink),var(--primary-purple),var(--light-purple));
       -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
       filter:none; /* removed glow */
       text-shadow:none;
+      word-break:break-word;
     }
     .hero-subtitle{
       font-size:20px;color:var(--muted);margin-bottom:32px;
@@ -218,7 +219,7 @@
     }
     .final-cta-content{position:relative;z-index:2}
     .final-cta h2{
-      font-size:clamp(48px,7vw,64px);font-family:'Ultra',serif;margin-bottom:16px;letter-spacing:-1px;text-shadow:none
+      font-size:clamp(40px,6.8vw,64px);font-family:'Ultra',serif;margin-bottom:16px;letter-spacing:-1px;text-shadow:none
     }
     .final-cta p{
       font-size:20px;margin-bottom:40px;opacity:.95;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.75;font-family:'Open Sans',sans-serif
@@ -279,6 +280,43 @@
       .stats-grid{grid-template-columns:1fr;gap:28px}
       .stat-number{font-size:48px}
       .features,.how-it-works,.final-cta{padding:80px 0}
+    }
+
+    /* ==== EXTRA HERO FIXES FOR ~375px & BELOW ==== */
+    @media (max-width:400px){
+      .nav{padding:14px 0}
+      .logo{font-size:28px}
+      .logo img{width:36px;height:36px}
+
+      .hero{
+        min-height:auto;           /* allow content to grow vertically */
+        gap:36px;
+        padding:110px 0 48px;      /* account for fixed nav */
+      }
+      .hero-text{padding:0 16px !important}
+      .hero-title{
+        font-size:clamp(28px, 9.2vw, 56px) !important;
+        line-height:1.15;
+        word-break:break-word;
+      }
+      .hero-subtitle{
+        font-size:16px !important;
+        line-height:1.7;
+        max-width:unset;
+        padding-right:0;
+        margin-bottom:22px;
+      }
+      .cta-button{
+        padding:14px 18px;
+        font-size:14px;
+        border-radius:12px;
+        gap:8px;
+        margin-bottom:20px;
+      }
+      .hero-visual{order:-1}
+      .hero-image{width:240px}
+      .platform-badges{gap:8px}
+      .platform-badge{padding:8px 10px;font-size:12px}
     }
 
     /* Light scrollbar */
