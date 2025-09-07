@@ -121,6 +121,28 @@
     .logo:hover{transform:scale(1.03)}
     .logo img{width:48px;height:48px;border-radius:12px;box-shadow:0 4px 20px rgba(217,70,239,.25)}
 
+    /* Social icon in navbar (top-right) */
+    .social-icon{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      color:var(--primary-purple);
+      box-shadow:0 4px 14px rgba(0,0,0,.06);
+      text-decoration:none;
+      transition:transform .2s ease, box-shadow .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .social-icon:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+      color:var(--deep-purple);
+      border-color:#ddd;
+    }
+
     /* hide/remove nav links entirely */
     .nav-links{display:none !important}
 
@@ -345,6 +367,16 @@
       .stats-grid{grid-template-columns:1fr;gap:28px}
       .stat-number{font-size:48px}
       .features,.how-it-works,.final-cta{padding:80px 0}
+      
+      /* Make Instagram icon smaller on mobile */
+      .social-icon{
+        width:38px;
+        height:38px;
+      }
+      .social-icon svg{
+        width:18px;
+        height:18px;
+      }
     }
 
     /* ==== EXTRA HERO FIXES FOR ~375px & BELOW ==== */
@@ -397,7 +429,21 @@
     <div class="container">
       <div class="nav-container">
         <a class="logo" href="#"><img src="assets/logo.png" alt="Spill Logo"> Spill</a>
-        <!-- nav links removed as requested -->
+        
+        <!-- Instagram Icon -->
+        <a
+          class="social-icon"
+          href="https://www.instagram.com/spill.ng"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M16 2H8a6 6 0 0 0-6 6v8a6 6 0 0 0 6 6h8a6 6 0 0 0 6-6V8a6 6 0 0 0-6-6Z" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="3.6" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="17.35" cy="6.65" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
       </div>
     </div>
   </nav>
